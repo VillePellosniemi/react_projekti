@@ -26,5 +26,5 @@
     "eslint": "^5.12.0",
     "eslint-config-google": "^0.12.0",
     "eslint-plugin-react": "^7.12.4"
-  }
+  }, "homepage": "."
 }

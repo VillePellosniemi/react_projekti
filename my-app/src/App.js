@@ -9,16 +9,28 @@ import './App.css';
 import Grid from '@material-ui/core/Grid';
 
 class App extends Component {
+  state = {
+    picArray: [],
+    user: null,
+  };
+
+  checkLogin = () => {
+    return this.state.user !== null;
+  };
+
+
   render() {
     return (
         <Router basename='/~villeope/my-app'>
           <div className='container'>
             <Grid item sm={12}>
-              <Nav />
+              <Nav checkLogin={this.checkLogin}/>
             </Grid>
             <Grid item sm={12}>
               <Route path="/home" component={Front}/>
-              <Route path="/login" component={Login}/>
+              <Route exact path="/" render={(props) => (
+                  <Login {...props} setUser={this.setUser}/>
+              )}/>
               <Route path="/about" component={About}/>
               <Route path="/memes" component={Memes}/>
             </Grid>

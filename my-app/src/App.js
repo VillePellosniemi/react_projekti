@@ -28,9 +28,7 @@ class App extends Component {
             </Grid>
             <Grid item sm={12}>
               <Route path="/home" component={Front}/>
-              <Route exact path="/" render={(props) => (
-                  <Login {...props} setUser={this.setUser}/>
-              )}/>
+              <Route path="/login" component={Login}/>
               <Route path="/about" component={About}/>
               <Route path="/memes" component={Memes}/>
             </Grid>

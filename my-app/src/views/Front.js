@@ -1,17 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
+// import Table from '../components/Table';
 import PropTypes from 'prop-types';
+import ImageGrid from '../components/ImageGrid';
 
-class Front extends Component {
-
-  render() {
-    return (
-        <h1>Etusivu</h1>
-    );
-  }
-}
+const Front = (props) => {
+  const {picArray} = props;
+  return (
+      <React.Fragment>
+        {/* <Table picArray={picArray}/> */}
+        <ImageGrid picArray={picArray}/>
+      </React.Fragment>
+  );
+};
 
 Front.propTypes = {
-  match: PropTypes.object,
+  picArray: PropTypes.array,
 };
 
 export default Front;

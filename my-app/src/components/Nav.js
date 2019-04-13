@@ -35,9 +35,18 @@ function ButtonAppBar(props) {
               News
             </Typography>
             <Button color="inherit" button component={Link} to="/home">Home</Button>
-            <Button color="inherit" button component={Link} to="/memes">Memes</Button>
-            <Button color="inherit" button component={Link} to="/about">About</Button>
-            <Button color="inherit" button component={Link} to="/login">Login</Button>
+            {props.checkLogin() &&
+                <React.Fragment>
+                  <Button color="inherit" button component={Link} to="/upload">Home</Button>
+                  <Button color="inherit" button component={Link} to="/profile">Profile</Button>
+                  <Button color="inherit" button component={Link} to="/logout">Logout</Button>
+                </React.Fragment>
+            }
+            {props.checkLogin() &&
+              <React.Fragment>
+                <Button color="inherit" button component={Link} to="/">Login</Button>
+              </React.Fragment>
+            }
           </Toolbar>
         </AppBar>
       </div>
@@ -45,6 +54,7 @@ function ButtonAppBar(props) {
 }
 
 ButtonAppBar.propTypes = {
+  checkLogin: PropTypes.func,
   classes: PropTypes.object.isRequired,
 };
 

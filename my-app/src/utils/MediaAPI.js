@@ -1,5 +1,27 @@
 const apiUrl = 'http://media.mw.metropolia.fi/wbma/';
 
+const getAllMedia = () => {
+  return fetch(apiUrl + 'media/').then(response => {
+    return response.json();
+  }).then(json => {
+    console.log(json);
+    return Promise.all(json.map(pic => {
+      return fetch(apiUrl + 'media/' + pic.file_id).then(response => {
+        return response.json();
+      });
+    })).then(pics => {
+      console.log(pics);
+      return pics;
+    });
+  });
+};
+
+const getSingleMedia = (id) => {
+  return fetch(apiUrl + 'media/' + id).then(response => {
+    return response.json();
+  });
+};
+
 const login = (username, password) => {
   const settings = {
     method: 'POST',
@@ -43,35 +65,10 @@ const checkUser = (username) => {
   });
 };
 
-/*
-const getAllMedia = () => {
-  return fetch(apiUrl + 'media/').then(response => {
-    return response.json();
-  }).then(json => {
-    console.log(json);
-    return Promise.all(json.map(pic => {
-      return fetch(apiUrl + 'media/' + pic.file_id).then(response => {
-        return response.json();
-      });
-    })).then(pics => {
-      console.log(pics);
-      return pics;
-    });
-  });
-};
-
-const getSingleMedia = (id) => {
-  return fetch(apiUrl + 'media/' + id).then(response => {
-    return response.json();
-  });
-};
-
-
 const getFilesByTag = (tag) => {
   return fetch(apiUrl + 'tags/' + tag).then(response => {
     return response.json();
   });
 };
-*/
 
-export {/*getAllMedia, getSingleMedia,*/ login, register, getUser, /*getFilesByTag,*/ checkUser};
+export {getAllMedia, getSingleMedia, login, register, getUser, getFilesByTag, checkUser};

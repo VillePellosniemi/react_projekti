@@ -28,7 +28,7 @@ const Profile = (props) => {
     return <Redirect to="/" />;
   }
 
-  const {username, email, full_name, profilePic} = props.user;
+  const {username, email, full_name} = props.user;
   const { classes } = props;
   return (
       <React.Fragment>
@@ -36,7 +36,7 @@ const Profile = (props) => {
         <Card className={classes.card}>
           <CardActionArea>
             <CardMedia className={classes.media}
-                       image={mediaUrl + profilePic.filename} title={username}/>
+                       image={mediaUrl} title={username}/>
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
                 {username}

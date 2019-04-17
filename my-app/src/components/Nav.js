@@ -37,12 +37,12 @@ function ButtonAppBar(props) {
             <Button color="inherit" button component={Link} to="/home">Home</Button>
             {props.checkLogin() &&
                 <React.Fragment>
-                  <Button color="inherit" button component={Link} to="/upload">Home</Button>
+                  <Button color="inherit" button component={Link} to="/upload">Upload</Button>
                   <Button color="inherit" button component={Link} to="/profile">Profile</Button>
                   <Button color="inherit" button component={Link} to="/logout">Logout</Button>
                 </React.Fragment>
             }
-            {props.checkLogin() &&
+            {!props.checkLogin() &&
               <React.Fragment>
                 <Button color="inherit" button component={Link} to="/">Login</Button>
               </React.Fragment>

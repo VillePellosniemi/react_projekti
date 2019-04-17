@@ -125,24 +125,25 @@ class Login extends Component {
         <div className={classes.container}>
           <div>
             <Button color="primary" variant="contained"
-                    onClick={this.toggleForm}>{(this.state.formToggler && `Ei vielä tunnusta? Rekisteröidy!`) || `Kirjaudu sisään`}</Button>
+                    onClick={this.toggleForm}>{(this.state.formToggler && `No account yet?
+              Register.`) || `Login`}</Button>
           </div>
           {this.state.formToggler &&
           <React.Fragment>
-            <h1>Kirjaudu sisään</h1>
+            <h1>Login</h1>
             <form onSubmit={this.handleLoginSubmit}>
               <TextField fullWidth required name="username" id="username"
-                         label="Käyttäjätunnus"
+                         label="Username"
                          value={this.state.user.username}
                          onChange={this.handleInputChange}/>
               <TextField fullWidth required name="password" type="password"
                          id="password"
-                         label="Salasana"
+                         label="Password"
                          value={this.state.user.password}
                          onChange={this.handleInputChange}/>
               <Button className={classes.button} variant="contained"
                       color="primary" type="submit">
-                <Send/>&nbsp;Kirjaudu sisään!
+                <Send/>&nbsp;Login
               </Button>
             </form>
           </React.Fragment>
@@ -150,11 +151,11 @@ class Login extends Component {
 
           {!this.state.formToggler &&
           <React.Fragment>
-            <h1>Rekisteröityminen</h1>
+            <h1>Register</h1>
             <ValidatorForm instantValidate={false} onSubmit={this.handleRegisterSubmit}
                            onError={errors => console.log(errors)}>
               <TextValidator fullWidth name="username" id="username"
-                             label="Käyttäjätunnus"
+                             label="Username"
                              value={this.state.user.username}
                              onChange={this.handleInputChange}
                              validators={[
@@ -167,7 +168,7 @@ class Login extends Component {
                                'username not available']}/>
               <TextValidator fullWidth name="password" type="password"
                              id="password"
-                             label="Salasana"
+                             label="Password"
                              value={this.state.user.password}
                              onChange={this.handleInputChange}
                              validators={['required', 'minStringLength:5']}
@@ -176,7 +177,7 @@ class Login extends Component {
                                'minimum 5 characters']}/>
               <TextValidator fullWidth name="repeatPassword" type="password"
                              id="repeatPassword"
-                             label="Kirjoita salasana uudelleen"
+                             label="Repeat password"
                              value={this.state.user.repeatPassword}
                              onChange={this.handleInputChange}
                              validators={['isPasswordMatch', 'required']}
@@ -185,7 +186,7 @@ class Login extends Component {
                                'this field is required']}/>
               <TextValidator fullWidth name="email"
                              id="email"
-                             label="Sähköposti"
+                             label="email"
                              value={this.state.user.email}
                              onChange={this.handleInputChange}
                              validators={['required', 'isEmail']}
@@ -193,12 +194,12 @@ class Login extends Component {
                                'this field is required',
                                'email is not valid']}/>
               <TextField fullWidth name="full_name" id="full_name"
-                         label="Koko nimesi"
+                         label="Full name"
                          value={this.state.user.full_name}
                          onChange={this.handleInputChange}/>
               <Button className={classes.button} variant="contained"
                       color="primary" type="submit">
-                <Send/>&nbsp;Rekisteröidy!
+                <Send/>&nbsp;Register
               </Button>
             </ValidatorForm>
           </React.Fragment>
@@ -218,4 +219,3 @@ Login.propTypes = {
 };
 
 export default withStyles(styles)(Login);
-

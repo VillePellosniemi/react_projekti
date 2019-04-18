@@ -23,7 +23,6 @@ const styles = {
 };
 
 const Profile = (props) => {
-  // korjataan profiilisivun latausongelma
   if (props.user === null) {
     return <Redirect to="/" />;
   }
@@ -42,7 +41,7 @@ const Profile = (props) => {
                 {username}
               </Typography>
               <Typography component="p">
-                email: {email}
+                Email: {email}
               </Typography>
               <Typography component="p">
                 Full name: {full_name}

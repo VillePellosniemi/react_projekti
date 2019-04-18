@@ -15,7 +15,7 @@ const mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
 
 const styles = {
   card: {
-    maxWidth: 400,
+    maxWidth: 500,
   },
   media: {
     height: 300,
@@ -31,9 +31,9 @@ const Profile = (props) => {
   const {username, email, full_name} = props.user;
   const { classes } = props;
   return (
-      <React.Fragment>
+      <React.Fragment id={'container'}>
         <h1 className={'profile'}> Profile</h1>
-        <Card className={classes.card}>
+        <Card id="card" className={classes.card}>
           <CardActionArea>
             <CardMedia className={classes.media}
                        image={mediaUrl} title={username}/>

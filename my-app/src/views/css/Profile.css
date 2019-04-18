@@ -4,3 +4,10 @@
     font-family: "Baskerville Old Face";
     text-align: center;
 }
+
+#card {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    height: 500px;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {Redirect} from 'react-router-dom';
+import './css/Profile.css';
 import {
   Card,
   CardActionArea,
@@ -14,7 +15,7 @@ const mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
 
 const styles = {
   card: {
-    maxWidth: 345,
+    maxWidth: 400,
   },
   media: {
     height: 300,
@@ -31,7 +32,7 @@ const Profile = (props) => {
   const { classes } = props;
   return (
       <React.Fragment>
-        <h1>Profile</h1>
+        <h1 className={'profile'}> Profile</h1>
         <Card className={classes.card}>
           <CardActionArea>
             <CardMedia className={classes.media}

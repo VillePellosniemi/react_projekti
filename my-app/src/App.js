@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ReactPlayer from 'react-player';
+//import ReactPlayer from 'react-player';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {getAllMedia, getFilesByTag} from './utils/MediaAPI';
 import Front from './views/Front';

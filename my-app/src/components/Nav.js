@@ -35,6 +35,7 @@ function ButtonAppBar(props) {
             {props.checkLogin() &&
                 <React.Fragment>
                   <Button color="inherit" button component={Link} to="/upload">Upload</Button>
+                  <Button color="inherit" button component={Link} to="/video">Videos</Button>
                   <Button color="inherit" button component={Link} to="/profile">Profile</Button>
                   <Button color="inherit" button component={Link} to="/logout">Logout</Button>
                 </React.Fragment>

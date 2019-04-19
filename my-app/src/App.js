@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactPlayer from 'react-player';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {getAllMedia, getFilesByTag} from './utils/MediaAPI';
 import Front from './views/Front';
@@ -71,6 +72,10 @@ class App extends Component {
 
               <Route path="/upload" render={(props) => (
                   <Upload {...props} updateImages={this.updateImages}/>
+              )}/>
+
+              <Route path="/videos" render={(props) => (
+              <Profile {...props} user={this.state.videos}/>
               )}/>
 
               <Route path="/single/:id" component={Single}/>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 //import ReactPlayer from 'react-player';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {getAllMedia, getFilesByTag} from './utils/MediaAPI';
-import Front from './views/Front';
+//import Front from './views/Front';
 import Single from './views/Single';
 import Nav from './components/Nav';
 import Login from './views/Login';
@@ -67,7 +67,8 @@ class App extends Component {
             </Grid>
             <Grid item sm={12}>
               <Route path="/home" render={(props) => (
-                  <Front {...props} picArray={this.state.picArray}/>
+                  //<Front {...props} picArray={this.state.picArray}/>
+                  <Profile {...props} user={this.state.user}/>
               )}/>
 
               <Route path="/upload" render={(props) => (

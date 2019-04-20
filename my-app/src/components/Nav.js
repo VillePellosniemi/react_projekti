@@ -54,7 +54,7 @@ class ButtonAppBar extends React.Component {
     const sideList = (
         <div className={classes.list}>
           <List>
-            <ListItem button component={Link} to="/home">
+            <ListItem style={{padding:20, marginTop: -10}} button component={Link} to="/home">
               <ListItemIcon>
                 <Home/>
               </ListItemIcon>
@@ -62,25 +62,25 @@ class ButtonAppBar extends React.Component {
             </ListItem>
             {this.props.checkLogin() &&
             <React.Fragment>
-              <ListItem button component={Link} to="/upload">
+              <ListItem style={{padding:20}} button component={Link} to="/upload">
                 <ListItemIcon>
                   <AddBox/>
                 </ListItemIcon>
                 <ListItemText primary="Upload"/>
               </ListItem>
-              <ListItem button component={Link} to="/videos">
+              <ListItem style={{padding:20}} button component={Link} to="/videos">
                 <ListItemIcon>
                   <VideoLibrary/>
                 </ListItemIcon>
                 <ListItemText primary="Videos"/>
               </ListItem>
-              <ListItem button component={Link} to="/profile">
+              <ListItem style={{padding:20}} button component={Link} to="/profile">
                 <ListItemIcon>
                   <Person/>
                 </ListItemIcon>
                 <ListItemText primary="Profile"/>
               </ListItem>
-              <ListItem button component={Link} to="/logout">
+              <ListItem style={{padding:20}} button component={Link} to="/logout">
                 <ListItemIcon>
                   <ExitToApp/>
                 </ListItemIcon>
@@ -89,7 +89,7 @@ class ButtonAppBar extends React.Component {
             </React.Fragment>
             }
             {!this.props.checkLogin() &&
-            <ListItem button component={Link} to="/">
+            <ListItem style={{padding:20}} button component={Link} to="/">
               <ListItemIcon>
                 <ExitToApp/>
               </ListItemIcon>

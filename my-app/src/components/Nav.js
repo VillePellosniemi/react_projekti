@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button';
 import './css/Nav.css';
 import {Home, AddBox, ExitToApp, VideoLibrary, Person, Menu,} from '@material-ui/icons';
 import IconButton from '@material-ui/core/IconButton';
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -32,7 +31,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '0 8px',
-  }
+  },
+  drawerPaper: {
+    width: '35%',
+  },
 };
 
 class ButtonAppBar extends React.Component {
@@ -102,10 +104,13 @@ class ButtonAppBar extends React.Component {
         <div className={classes.root}>
           <AppBar position="static">
             <Toolbar>
-              <IconButton onClick={this.toggleDrawer('left', true)} color="inherit" aria-label="Menu">
-                <Menu id="menu"/>
+              <IconButton id="menu" onClick={this.toggleDrawer('left', true)} color="inherit" aria-label="Menu">
+                <Menu />
               </IconButton>
-              <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+              <Drawer type="temporary"
+                      classes={{
+                        paper: classes.drawerPaper,
+                      }} open={this.state.left} onClose={this.toggleDrawer('left', false)}>
                 <div
                     tabIndex={0}
                     role="button"
@@ -122,27 +127,27 @@ class ButtonAppBar extends React.Component {
                       className="hidden"><Home/>Home</Button>
               <Button color="inherit" button component={Link} to="/home"
                       className="hidden"><Home/>Home</Button>
-              <Button style={{padding: 15}} color="inherit" button
+              <Button style={{margin: 10}} color="inherit" button
                       component={Link} to="/home"
                       className="link"><Home/>Home</Button>
               {this.props.checkLogin() &&
               <React.Fragment>
-                <Button style={{padding: 15}} color="inherit" button
+                <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/upload" className="link"><AddBox/>Upload</Button>
-                <Button style={{padding: 15}} color="inherit" button
+                <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/video"
                         className="link"><VideoLibrary/>Videos</Button>
-                <Button style={{padding: 15}} color="inherit" button
+                <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/profile"
                         className="link"><Person/>Profile</Button>
-                <Button style={{padding: 15}} color="inherit" button
+                <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/logout"
                         className="link"><ExitToApp/>Logout</Button>
               </React.Fragment>
               }
               {!this.props.checkLogin() &&
               <React.Fragment>
-                <Button style={{padding: 15}} color="inherit" button
+                <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/" className="link"><ExitToApp/>Login</Button>
               </React.Fragment>
               }

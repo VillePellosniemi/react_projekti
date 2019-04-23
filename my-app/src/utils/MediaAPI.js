@@ -1,7 +1,30 @@
 const apiUrl = 'http://media.mw.metropolia.fi/wbma/';
 
+const handleFetchErrors = (response) => {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+};
+
 const getAllMedia = () => {
   return fetch(apiUrl + 'media/').then(response => {
+    return response.json();
+  }).then(json => {
+    console.log(json);
+    return Promise.all(json.map(pic => {
+      return fetch(apiUrl + 'media/' + pic.file_id).then(response => {
+        return response.json();
+      });
+    })).then(pics => {
+      console.log(pics);
+      return pics;
+    });
+  });
+};
+
+const getMediaFromUser = (id) => {
+  return fetch(apiUrl + 'media/user/' + id).then(response => {
     return response.json();
   }).then(json => {
     console.log(json);
@@ -71,4 +94,87 @@ const getFilesByTag = (tag) => {
   });
 };
 
-export {getAllMedia, getSingleMedia, login, register, getUser, getFilesByTag, checkUser};
+const upload = (data, token) => {
+  const options = {
+    method: 'POST',
+    body: data,
+    headers: {
+      'x-access-token': token,
+    },
+  };
+
+  return fetch(apiUrl + 'media', options).then(response => {
+    return response.json();
+  });
+};
+
+const modify = (id, data, token) => {
+  const options = {
+    method: 'PUT',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json',
+      'x-access-token': token,
+    },
+  };
+
+  return fetch(apiUrl + 'media/' + id, options)
+  .then(handleFetchErrors)
+  .then(response => {
+    return response.json();
+  });
+};
+
+const deleteMedia = (id, token) => {
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'x-access-token': token,
+    },
+  };
+
+  return fetch(apiUrl + 'media/' + id, options)
+  .then(handleFetchErrors)
+  .then(response => {
+    return response.json();
+  });
+};
+
+const getFilters = (text, defaultFilters) => {
+  const pattern = '\\[f\\](.*?)\\[\\/f\\]';
+  const re = new RegExp(pattern);
+  try {
+    return JSON.parse(re.exec(text)[1]);
+  } catch (e) {
+    // console.log(e);
+    return defaultFilters;
+  }
+};
+
+const getDescription = (text) => {
+  const pattern = '\\[d\\]((.|[\\r\\n])*?)\\[\\/d\\]';
+  const re = new RegExp(pattern);
+  console.log(re.exec(text));
+  try {
+    return re.exec(text)[1];
+  } catch (e) {
+    return text;
+  }
+};
+
+export {
+  getAllMedia,
+  getSingleMedia,
+  login,
+  register,
+  getUser,
+  getFilesByTag,
+  checkUser,
+  getMediaFromUser,
+  getFilters,
+  getDescription,
+  handleFetchErrors,
+  upload,
+  modify,
+  deleteMedia,
+};

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 //import ReactPlayer from 'react-player';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {getAllMedia, getFilesByTag} from './utils/MediaAPI';
-//import Front from './views/Front';
+import Front from './views/Front';
 import Single from './views/Single';
 import Nav from './components/Nav';
 import Login from './views/Login';
@@ -10,6 +10,8 @@ import Profile from './views/Profile';
 import Logout from './views/Logout';
 import Grid from '@material-ui/core/Grid';
 import Upload from './views/Upload';
+import MyFiles from './views/MyFiles';
+import Modify from './views/Modify';
 
 class App extends Component {
 
@@ -67,8 +69,7 @@ class App extends Component {
             </Grid>
             <Grid item sm={12}>
               <Route path="/home" render={(props) => (
-                  //<Front {...props} picArray={this.state.picArray}/>
-                  <Profile {...props} user={this.state.user}/>
+                  <Front {...props} picArray={this.state.picArray}/>
               )}/>
 
               <Route path="/upload" render={(props) => (
@@ -81,8 +82,14 @@ class App extends Component {
 
               <Route path="/single/:id" component={Single}/>
 
+              <Route path="/modify/:id" component={Modify}/>
+
               <Route path="/profile" render={(props) => (
                   <Profile {...props} user={this.state.user}/>
+              )}/>
+
+              <Route path="/my-files" render={(props) => (
+                  <MyFiles {...props} user={this.state.user}/>
               )}/>
 
               <Route exact path="/" render={(props) => (

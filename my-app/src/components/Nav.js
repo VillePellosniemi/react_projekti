@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import './css/Nav.css';
-import {Home, AddBox, ExitToApp, VideoLibrary, Person, Menu,} from '@material-ui/icons';
+import {Home, AddBox, ExitToApp, VideoLibrary, Person, Menu, Description} from '@material-ui/icons';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -80,6 +80,12 @@ class ButtonAppBar extends React.Component {
                 </ListItemIcon>
                 <ListItemText primary="Profile"/>
               </ListItem>
+              <ListItem style={{padding:20}} button component={Link} to="/my-files">
+                <ListItemIcon>
+                  <Description/>
+                </ListItemIcon>
+                <ListItemText primary="My Files"/>
+              </ListItem>
               <ListItem style={{padding:20}} button component={Link} to="/logout">
                 <ListItemIcon>
                   <ExitToApp/>
@@ -140,6 +146,9 @@ class ButtonAppBar extends React.Component {
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/profile"
                         className="link"><Person/>Profile</Button>
+                <Button style={{margin: 10}} color="inherit" button
+                        component={Link} to="/my-files"
+                        className="link"><Description/>Files</Button>
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/logout"
                         className="link"><ExitToApp/>Logout</Button>

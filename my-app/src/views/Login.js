@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {login, register, getUser, checkUser} from '../utils/MediaAPI';
 import {TextField, Button} from '@material-ui/core';
-import {Send} from '@material-ui/icons';
+import {ExitToApp, AccountBox} from '@material-ui/icons';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import red from '@material-ui/core/colors/red';
 import {withStyles} from '@material-ui/core/styles';
+import './css/Login.css';
 
 const styles = theme => ({
   container: {
@@ -13,7 +14,7 @@ const styles = theme => ({
     padding: '1rem',
   },
   button: {
-    margin: theme.spacing.unit,
+    marginLeft: 5,
   },
   alert: {
     color: red[500],
@@ -34,8 +35,6 @@ class Login extends Component {
     validUser: true,
   };
 
-  myRef = 'form';
-
   handleLoginSubmit = (evt) => {
     evt.preventDefault();
     this.doLogin();
@@ -43,7 +42,6 @@ class Login extends Component {
 
   handleRegisterSubmit = () => {
     const user = {...this.state.user};
-    // remove repeatPassword
     delete user.repeatPassword;
     register(user).then(user => {
       console.log(user);
@@ -121,28 +119,27 @@ class Login extends Component {
   render() {
     const {classes} = this.props;
     return (
-        <div className={classes.container}>
-          <div>
-            <Button color="primary" variant="contained"
-                    onClick={this.toggleForm}>{(this.state.formToggler && `No account yet?
-              Register.`) || `Login`}</Button>
-          </div>
+        <div className="container">
           {this.state.formToggler &&
           <React.Fragment>
-            <h1>Login</h1>
-            <form onSubmit={this.handleLoginSubmit}>
-              <TextField fullWidth required name="username" id="username"
+            <h1 className="header">Login</h1>
+            <form id="yourdiv" onSubmit={this.handleLoginSubmit}>
+              <TextField name="username" id="username"
                          label="Username"
                          value={this.state.user.username}
                          onChange={this.handleInputChange}/>
-              <TextField fullWidth required name="password" type="password"
+              <br/>
+              <TextField name="password" type="password"
                          id="password"
                          label="Password"
                          value={this.state.user.password}
                          onChange={this.handleInputChange}/>
+              <br/>
               <Button className={classes.button} variant="contained"
-                      color="primary" type="submit">
-                <Send/>&nbsp;Login
+                      color="primary" type="submit">Login<ExitToApp style={{paddingLeft: 6}}/>
+              </Button>
+              <Button color="primary" variant="contained"
+                      onClick={this.toggleForm}>{(this.state.formToggler && 'No account yet? Register here') || 'Login'}<AccountBox style={{paddingLeft: 6}}/>
               </Button>
             </form>
           </React.Fragment>
@@ -185,7 +182,7 @@ class Login extends Component {
                                'this field is required']}/>
               <TextValidator fullWidth name="email"
                              id="email"
-                             label="email"
+                             label="Email"
                              value={this.state.user.email}
                              onChange={this.handleInputChange}
                              validators={['required', 'isEmail']}
@@ -197,8 +194,9 @@ class Login extends Component {
                          value={this.state.user.full_name}
                          onChange={this.handleInputChange}/>
               <Button className={classes.button} variant="contained"
-                      color="primary" type="submit">
-                <Send/>&nbsp;Register
+                      color="primary" type="submit">Register<AccountBox style={{paddingLeft: 6}}/></Button>
+              <Button color="primary" variant="contained"
+                      onClick={this.toggleForm}>{(this.state.formToggler && 'Register') || `Already got an account? Sign in`}<ExitToApp style={{paddingLeft: 6}}/>
               </Button>
             </ValidatorForm>
           </React.Fragment>

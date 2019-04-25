@@ -5,7 +5,6 @@ import {TextField, Button} from '@material-ui/core';
 import {Send} from '@material-ui/icons';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import red from '@material-ui/core/colors/red';
-
 import {withStyles} from '@material-ui/core/styles';
 
 const styles = theme => ({

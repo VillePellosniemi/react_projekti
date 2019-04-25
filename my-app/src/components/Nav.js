@@ -72,7 +72,7 @@ class ButtonAppBar extends React.Component {
                 <ListItemIcon>
                   <VideoLibrary/>
                 </ListItemIcon>
-                <ListItemText primary="Videos"/>
+                <ListItemText primary="Chat"/>
               </ListItem>
               <ListItem style={{padding:20}} button component={Link} to="/profile">
                 <ListItemIcon>
@@ -142,7 +142,7 @@ class ButtonAppBar extends React.Component {
                         component={Link} to="/upload" className="link"><AddBox/>Upload</Button>
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/video"
-                        className="link"><VideoLibrary/>Videos</Button>
+                        className="link"><VideoLibrary/>Chat</Button>
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/profile"
                         className="link"><Person/>Profile</Button>

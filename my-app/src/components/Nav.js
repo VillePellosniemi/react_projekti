@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import './css/Nav.css';
-import {Home, AddBox, ExitToApp, VideoLibrary, Person, Menu, Description} from '@material-ui/icons';
+import {Home, ExitToApp, VideoLibrary, Person, Menu, Description, Chat} from '@material-ui/icons';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -62,12 +62,6 @@ class ButtonAppBar extends React.Component {
             </ListItem>
             {this.props.checkLogin() &&
             <React.Fragment>
-              <ListItem style={{padding:20}} button component={Link} to="/upload">
-                <ListItemIcon>
-                  <AddBox/>
-                </ListItemIcon>
-                <ListItemText primary="Upload"/>
-              </ListItem>
               <ListItem style={{padding:20}} button component={Link} to="/videos">
                 <ListItemIcon>
                   <VideoLibrary/>
@@ -139,16 +133,14 @@ class ButtonAppBar extends React.Component {
               {this.props.checkLogin() &&
               <React.Fragment>
                 <Button style={{margin: 10}} color="inherit" button
-                        component={Link} to="/upload" className="link"><AddBox/>Upload</Button>
-                <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/video"
-                        className="link"><VideoLibrary/>Chat</Button>
+                        className="link"><Chat/>Chat</Button>
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/profile"
                         className="link"><Person/>Profile</Button>
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/my-files"
-                        className="link"><Description/>Files</Button>
+                        className="link"><VideoLibrary/>Files</Button>
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/logout"
                         className="link"><ExitToApp/>Logout</Button>

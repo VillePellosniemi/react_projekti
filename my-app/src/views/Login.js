@@ -122,25 +122,28 @@ class Login extends Component {
         <div className="container">
           {this.state.formToggler &&
           <React.Fragment>
-            <h1 className="header">Login</h1>
             <form id="yourdiv" onSubmit={this.handleLoginSubmit}>
-              <TextField name="username" id="username"
+              <h1 className="header">Login</h1>
+              <TextField required fullWidth name="username" id="username"
                          label="Username"
                          value={this.state.user.username}
                          onChange={this.handleInputChange}/>
               <br/>
-              <TextField name="password" type="password"
+              <TextField required fullWidth name="password" type="password"
                          id="password"
                          label="Password"
                          value={this.state.user.password}
                          onChange={this.handleInputChange}/>
               <br/>
-              <Button className={classes.button} variant="contained"
+              <Button id="button" variant="contained"
                       color="primary" type="submit">Login<ExitToApp style={{paddingLeft: 6}}/>
               </Button>
-              <Button color="primary" variant="contained"
+              <Button id="button" color="primary" variant="contained"
                       onClick={this.toggleForm}>{(this.state.formToggler && 'No account yet? Register here') || 'Login'}<AccountBox style={{paddingLeft: 6}}/>
               </Button>
+              <p className={classes.alert}>
+                {this.state.message}
+              </p>
             </form>
           </React.Fragment>
           }
@@ -193,17 +196,17 @@ class Login extends Component {
                          label="Full name"
                          value={this.state.user.full_name}
                          onChange={this.handleInputChange}/>
-              <Button className={classes.button} variant="contained"
+              <Button id="button" variant="contained"
                       color="primary" type="submit">Register<AccountBox style={{paddingLeft: 6}}/></Button>
-              <Button color="primary" variant="contained"
+              <Button id="button" color="primary" variant="contained"
                       onClick={this.toggleForm}>{(this.state.formToggler && 'Register') || `Already got an account? Sign in`}<ExitToApp style={{paddingLeft: 6}}/>
               </Button>
+              <p className={classes.alert}>
+                {this.state.message}
+              </p>
             </ValidatorForm>
           </React.Fragment>
           }
-          <p className={classes.alert}>
-            {this.state.message}
-          </p>
         </div>
     );
   }

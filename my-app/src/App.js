@@ -67,7 +67,7 @@ class App extends Component {
             <Grid item sm={12}>
               <Nav checkLogin={this.checkLogin}/>
             </Grid>
-            <Grid item sm={12}>
+            <Grid item sm={8}>
               <Route path="/home" render={(props) => (
                   <Front {...props} picArray={this.state.picArray}/>
               )}/>
@@ -99,6 +99,9 @@ class App extends Component {
               <Route path="/logout" render={(props) => (
                   <Logout {...props} setUserLogout={this.setUserLogout}/>
               )}/>
+            </Grid>
+            <Grid item sm={3}>
+              <h1>Chat</h1>
             </Grid>
           </Grid>
         </Router>

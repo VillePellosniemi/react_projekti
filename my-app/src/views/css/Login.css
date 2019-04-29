@@ -1,9 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:700');
 
+html {
+    background-image: url("https://cdn.pixabay.com/photo/2016/04/15/04/02/water-1330252__340.jpg");
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
-    padding: 50px;
     text-align: center;
-    background-color: green;
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20%;
 }
 
 .header {
@@ -13,14 +28,25 @@
 
 #button {
     margin: 10px;
+    background-color: lawngreen;
+}
+
+#button2 {
+    background-color: red;
 }
 
 #yourdiv {
     display: inline-block;
-    padding: 100px;
+    padding: 50px;
 }
 
-#username, #password {
+#test {
+    max-width: 500px;
+    display: inline-block;
+    padding: 50px;
+}
+
+#username, #password, #repeatPassword, #email, #full_name {
     padding: 10px;
     font-size: 20px;
     color: black;

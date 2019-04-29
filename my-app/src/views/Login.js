@@ -136,9 +136,9 @@ class Login extends Component {
                          onChange={this.handleInputChange}/>
               <br/>
               <Button id="button" variant="contained"
-                      color="primary" type="submit">Login<ExitToApp style={{paddingLeft: 6}}/>
+                      type="submit">Login<ExitToApp style={{paddingLeft: 6}}/>
               </Button>
-              <Button id="button" color="primary" variant="contained"
+              <Button id="button2" variant="contained"
                       onClick={this.toggleForm}>{(this.state.formToggler && 'No account yet? Register here') || 'Login'}<AccountBox style={{paddingLeft: 6}}/>
               </Button>
               <p className={classes.alert}>
@@ -150,9 +150,9 @@ class Login extends Component {
 
           {!this.state.formToggler &&
           <React.Fragment>
-            <h1>Register</h1>
-            <ValidatorForm instantValidate={false} onSubmit={this.handleRegisterSubmit}
+            <ValidatorForm id="test" instantValidate={false} onSubmit={this.handleRegisterSubmit}
                            onError={errors => console.log(errors)}>
+              <h1>Register</h1>
               <TextValidator fullWidth name="username" id="username"
                              label="Username"
                              value={this.state.user.username}

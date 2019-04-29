@@ -4,7 +4,11 @@
 #root {
     width: 100%;
     margin: 0 auto;
+}
 
+#gallery {
+    border: 2px solid darkblue;
+    border-radius: 5px;
 }
 
 body {
@@ -26,7 +30,10 @@ p {
 }
 
 .chatroom {
-    width: 100%;
+    position: absolute;
+    right: 0;
+    border: 2px solid darkblue;
+    width: 500px;
     height: 600px;
     background-color: rgba(0,0,0, .7);
     border-radius: 5px;
@@ -36,7 +43,7 @@ p {
 
 .chatroom h3 {
     font-family: 'Pacifico';
-    background-color: rgba(30, 228, 148, 0.7);
+    background-color: rgba(30, 34, 228, 0.7);
     color: #FFF;
     margin: 0;
     height: 40px;
@@ -55,7 +62,7 @@ p {
 }
 
 .chatroom .chats .chat {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(130, 121, 250, 0.8);
     position: relative;
     padding: 5px 13px;
     font-size: 14px;
@@ -89,14 +96,14 @@ p {
 .chatroom .input {
     height: 40px;
     width: 100%;
-    background: rgba(30, 228, 148, 0.7);
+    background: rgba(130, 121, 250, 0.8);
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
 .chatroom .input input[type="text"] {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     outline: 0;
     border: 2px solid #1EE494;
     padding: 0 5px;
@@ -125,4 +132,8 @@ p {
 .chatroom .input input[type="submit"]:hover {
     background: #1EE494;
     color: #FFF;
+}
+
+.scroll {
+
 }

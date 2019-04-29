@@ -12,15 +12,20 @@ const Front = (props) => {
   return (
       <React.Fragment>
         {/* <Table picArray={picArray}/> */}
+        <div id="gallery">
         <Grid item sm={8}>
-            <Scrollbars style={{width: 500, height: 300}}>
+            <Scrollbars class="scroll" style={{width: 490, height: 500}}>
           <ImageGrid picArray={picArray}/>
             </Scrollbars>
         </Grid>
+        </div>
         <Grid item sm={4}>
           <Chatroom />
         </Grid>
-        <Upload />
+          <div>
+              <Upload />
+          </div>
+
       </React.Fragment>
   );
 };

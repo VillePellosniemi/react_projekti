@@ -139,7 +139,7 @@ class Login extends Component {
                       type="submit">Login<Send style={{paddingLeft: 6}}/>
               </Button>
               <Button id="button2" variant="contained"
-                      onClick={this.toggleForm}>{(this.state.formToggler && 'No account yet? Register here') || 'Login'}<AccountBox style={{paddingLeft: 6}}/>
+                      onClick={this.toggleForm}>No account yet?<br/>Register here<AccountBox style={{paddingLeft: 6}}/>
               </Button>
               <p className={classes.alert}>
                 {this.state.message}

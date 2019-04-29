@@ -28,3 +28,7 @@
         visibility: hidden;
     }
 }
+
+#appbar {
+    background-color: #12355b;
+}

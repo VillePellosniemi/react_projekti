@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:700');
 
 html {
-    background-image: url("https://cdn.pixabay.com/photo/2016/04/15/04/02/water-1330252__340.jpg");
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("https://cdn.hipwallpaper.com/i/95/89/lO0ACq.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 
@@ -24,42 +22,52 @@ html {
 .header {
     font-family: 'Hind', sans-serif;
     font-size: 50px;
-    background-color: white;
-    margin-top: 0;
+    margin: 10px 0 10px 0;
+    padding: 0;
 }
 
 #button {
-    margin-top: 20px;
-    background-color: lawngreen;
+    margin-top: 30px;
+    background-color: #12355b;
     height: 80px;
     font-size: 20px;
+    border-radius: 0;
+    width: 250px;
+    color: #bfcde7;
 }
 
 #button2 {
-    background-color: red;
-    margin-top: 20px;
+    background-color: #bfcde7;
+    margin-top: 30px;
     height: 80px;
     font-size: 15px;
+    border-radius: 0;
+    width: 250px;
+    color: #12355b;
 }
 
-#yourdiv {
+#login {
     display: inline-block;
     margin: 50px;
     background-color: #f9f9f9;
     padding: 40px;
     max-width: 500px;
+    border-radius: 15px;
 }
 
-#test {
+
+#register {
     max-width: 500px;
     display: inline-block;
-    padding: 50px;
+    padding: 20px 50px 50px 50px;
+    background-color: white;
+    margin-top: -25px;
 }
 
 #username, #password, #repeatPassword, #email, #full_name {
     padding: 10px;
     font-size: 20px;
-    color: black;
+    color: yellowgreen;
 }
 
 

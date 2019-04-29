@@ -122,7 +122,7 @@ class Login extends Component {
         <div className="container">
           {this.state.formToggler &&
           <React.Fragment>
-            <form id="yourdiv" onSubmit={this.handleLoginSubmit}>
+            <form id="login" onSubmit={this.handleLoginSubmit}>
               <h1 className="header">Login</h1>
               <TextField required fullWidth name="username" id="username"
                          label="Username"
@@ -139,7 +139,7 @@ class Login extends Component {
                       type="submit">Login<Send style={{paddingLeft: 6}}/>
               </Button>
               <Button id="button2" variant="contained"
-                      onClick={this.toggleForm}>No account yet?<br/>Register here<AccountBox style={{paddingLeft: 6}}/>
+                      onClick={this.toggleForm}>No account yet?<br/>Register here!<AccountBox style={{paddingLeft: 20}}/>
               </Button>
               <p className={classes.alert}>
                 {this.state.message}
@@ -150,9 +150,9 @@ class Login extends Component {
 
           {!this.state.formToggler &&
           <React.Fragment>
-            <ValidatorForm id="test" instantValidate={false} onSubmit={this.handleRegisterSubmit}
+            <ValidatorForm id="register" instantValidate={false} onSubmit={this.handleRegisterSubmit}
                            onError={errors => console.log(errors)}>
-              <h1>Register</h1>
+              <h1 className="header">Register</h1>
               <TextValidator fullWidth name="username" id="username"
                              label="Username"
                              value={this.state.user.username}
@@ -199,7 +199,7 @@ class Login extends Component {
               <Button id="button" variant="contained"
                       type="submit">Register<Send style={{paddingLeft: 6}}/></Button>
               <Button id="button2" variant="contained"
-                      onClick={this.toggleForm}>{(this.state.formToggler && 'Register') || `Already got an account? Sign in`}<ExitToApp style={{paddingLeft: 6}}/>
+                      onClick={this.toggleForm}>Already got an<br/>account? Sign in!<ExitToApp style={{paddingLeft: 20}} />
               </Button>
               <p className={classes.alert}>
                 {this.state.message}

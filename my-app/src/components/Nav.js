@@ -102,7 +102,7 @@ class ButtonAppBar extends React.Component {
 
     return (
         <div className={classes.root}>
-          <AppBar position="static">
+          <AppBar id="appbar" position="static">
             <Toolbar>
               <IconButton id="menu" onClick={this.toggleDrawer('left', true)} color="inherit" aria-label="Menu">
                 <Menu />

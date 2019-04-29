@@ -5,11 +5,11 @@ import {
   GridList,
   GridListTile,
   GridListTileBar,
-  ListSubheader,
   IconButton,
 } from '@material-ui/core';
 import {OpenWith, Create, Clear, Photo, VideoLabel, Audiotrack} from '@material-ui/icons';
 import {getFilters} from '../utils/MediaAPI';
+import {Scrollbars} from 'react-custom-scrollbars';
 
 const mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
 
@@ -30,7 +30,6 @@ const ImageGrid = (props) => {
   return (
       <GridList>
         <GridListTile key="Subheader" cols={2} style={{height: 'auto'}}>
-          <ListSubheader component="div">Files</ListSubheader>
         </GridListTile>
         {props.picArray.map(tile => (
             <GridListTile key={tile.file_id}>

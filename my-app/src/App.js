@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import ReactPlayer from 'react-player';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {getAllMedia, getFilesByTag} from './utils/MediaAPI';
 import Front from './views/Front';
@@ -12,7 +11,6 @@ import Grid from '@material-ui/core/Grid';
 import Upload from './views/Upload';
 import MyFiles from './views/MyFiles';
 import Modify from './views/Modify';
-import Chatroom from './Chatroom';
 class App extends Component {
 
   state = {
@@ -89,7 +87,6 @@ class App extends Component {
             <Grid item sm={12}>
               <Nav checkLogin={this.checkLogin}/>
             </Grid>
-            <Grid item sm={8}>
               <Route path="/home" render={(props) => (
                   <Front {...props} picArray={this.state.picArray}/>
               )}/>
@@ -113,10 +110,6 @@ class App extends Component {
               <Route path="/logout" render={(props) => (
                   <Logout {...props} setUserLogout={this.setUserLogout}/>
               )}/>
-            </Grid>
-            <Grid item sm={3}>
-              <Chatroom />
-            </Grid>
           </Grid>
         </Router>
     );

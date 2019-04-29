@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {login, register, getUser, checkUser} from '../utils/MediaAPI';
 import {TextField, Button} from '@material-ui/core';
-import {ExitToApp, AccountBox} from '@material-ui/icons';
+import {ExitToApp, AccountBox, Send} from '@material-ui/icons';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import red from '@material-ui/core/colors/red';
 import {withStyles} from '@material-ui/core/styles';
@@ -136,7 +136,7 @@ class Login extends Component {
                          onChange={this.handleInputChange}/>
               <br/>
               <Button id="button" variant="contained"
-                      type="submit">Login<ExitToApp style={{paddingLeft: 6}}/>
+                      type="submit">Login<Send style={{paddingLeft: 6}}/>
               </Button>
               <Button id="button2" variant="contained"
                       onClick={this.toggleForm}>{(this.state.formToggler && 'No account yet? Register here') || 'Login'}<AccountBox style={{paddingLeft: 6}}/>
@@ -192,13 +192,13 @@ class Login extends Component {
                              errorMessages={[
                                'this field is required',
                                'email is not valid']}/>
-              <TextField fullWidth name="full_name" id="full_name"
+              <TextField fullWidth required name="full_name" id="full_name"
                          label="Full name"
                          value={this.state.user.full_name}
                          onChange={this.handleInputChange}/>
               <Button id="button" variant="contained"
-                      color="primary" type="submit">Register<AccountBox style={{paddingLeft: 6}}/></Button>
-              <Button id="button" color="primary" variant="contained"
+                      type="submit">Register<Send style={{paddingLeft: 6}}/></Button>
+              <Button id="button2" variant="contained"
                       onClick={this.toggleForm}>{(this.state.formToggler && 'Register') || `Already got an account? Sign in`}<ExitToApp style={{paddingLeft: 6}}/>
               </Button>
               <p className={classes.alert}>

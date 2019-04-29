@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ImageGrid from '../components/ImageGrid';
 import {deleteMedia, getMediaFromUser} from '../utils/MediaAPI';
+import Grid from '@material-ui/core/Grid/Grid';
+import Chatroom from '../Chatroom';
 
 class MyFiles extends Component {
   state = {
@@ -41,9 +43,14 @@ class MyFiles extends Component {
   render() {
     return (
         <React.Fragment>
+          <Grid item sm={8}>
+            <ImageGrid picArray={this.state.picArray} edit={true}
+                       deleteFile={this.deleteFile}/>
+          </Grid>
+          <Grid item sm={4}>
+            <Chatroom />
+          </Grid>
           {/* <Table picArray={this.picArray}/> */}
-          <ImageGrid picArray={this.state.picArray} edit={true}
-                     deleteFile={this.deleteFile}/>
         </React.Fragment>
     );
   }

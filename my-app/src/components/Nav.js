@@ -120,7 +120,7 @@ class ButtonAppBar extends React.Component {
                   {sideList}
                 </div>
               </Drawer>
-              <h1 id="header">Masennus</h1>
+              <h1 id="header">Masentaa!</h1>
               <Typography variant="h6" color="inherit"
                           className={classes.grow}/>
               <Button color="inherit" button component={Link} to="/home"

@@ -11,6 +11,7 @@ import {OpenWith, Create, Clear, Photo, VideoLabel, Audiotrack} from '@material-
 import {getFilters} from '../utils/MediaAPI';
 import {Scrollbars} from 'react-custom-scrollbars';
 
+
 const mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
 
 const getFiltersToGrid = (tile) => {

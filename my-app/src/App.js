@@ -11,6 +11,8 @@ import Grid from '@material-ui/core/Grid';
 import Upload from './views/Upload';
 import MyFiles from './views/MyFiles';
 import Modify from './views/Modify';
+import Like from './views/Likes';
+
 class App extends Component {
 
   state = {

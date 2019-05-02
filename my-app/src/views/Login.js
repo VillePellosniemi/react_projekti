@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {login, register, getUser, checkUser} from '../utils/MediaAPI';
 import {TextField, Button} from '@material-ui/core';
-import {ExitToApp, AccountBox, Send} from '@material-ui/icons';
+import {Send} from '@material-ui/icons';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import red from '@material-ui/core/colors/red';
 import {withStyles} from '@material-ui/core/styles';
@@ -139,7 +139,7 @@ class Login extends Component {
                       type="submit">Login<Send style={{paddingLeft: 6}}/>
               </Button>
               <Button id="button2" variant="contained"
-                      onClick={this.toggleForm}>No account yet?<br/>Register here!<AccountBox style={{paddingLeft: 20}}/>
+                      onClick={this.toggleForm}>No account yet?<br/>Register here!
               </Button>
               <p className={classes.alert}>
                 {this.state.message}
@@ -153,7 +153,7 @@ class Login extends Component {
             <ValidatorForm id="register" instantValidate={false} onSubmit={this.handleRegisterSubmit}
                            onError={errors => console.log(errors)}>
               <h1 className="header">Register</h1>
-              <TextValidator fullWidth name="username" id="username"
+              <TextValidator fullWidth required name="username" id="username"
                              label="Username"
                              value={this.state.user.username}
                              onChange={this.handleInputChange}
@@ -165,7 +165,7 @@ class Login extends Component {
                                'this field is required',
                                'minimum 3 charaters',
                                'username not available']}/>
-              <TextValidator fullWidth name="password" type="password"
+              <TextValidator fullWidth required name="password" type="password"
                              id="password"
                              label="Password"
                              value={this.state.user.password}
@@ -174,7 +174,7 @@ class Login extends Component {
                              errorMessages={[
                                'this field is required',
                                'minimum 5 characters']}/>
-              <TextValidator fullWidth name="repeatPassword" type="password"
+              <TextValidator fullWidth required name="repeatPassword" type="password"
                              id="repeatPassword"
                              label="Repeat password"
                              value={this.state.user.repeatPassword}
@@ -183,7 +183,7 @@ class Login extends Component {
                              errorMessages={[
                                'password mismatch',
                                'this field is required']}/>
-              <TextValidator fullWidth name="email"
+              <TextValidator fullWidth required name="email"
                              id="email"
                              label="Email"
                              value={this.state.user.email}
@@ -199,7 +199,7 @@ class Login extends Component {
               <Button id="button" variant="contained"
                       type="submit">Register<Send style={{paddingLeft: 6}}/></Button>
               <Button id="button2" variant="contained"
-                      onClick={this.toggleForm}>Already got an<br/>account? Sign in!<ExitToApp style={{paddingLeft: 20}} />
+                      onClick={this.toggleForm}>Already got an<br/>account? Log in!
               </Button>
               <p className={classes.alert}>
                 {this.state.message}

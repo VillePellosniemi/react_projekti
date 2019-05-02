@@ -10,8 +10,8 @@ import Logout from './views/Logout';
 import Grid from '@material-ui/core/Grid';
 import Upload from './views/Upload';
 import MyFiles from './views/MyFiles';
-import Modify from './views/Modify';
 import Like from './views/Likes';
+import Modify from './views/Modify';
 
 class App extends Component {
 

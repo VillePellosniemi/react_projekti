@@ -133,7 +133,7 @@ class ButtonAppBar extends React.Component {
               {this.props.checkLogin() &&
               <React.Fragment>
                 <Button style={{margin: 10}} color="inherit" button
-                        component={Link} to="/video"
+                        component={Link} to="/chat"
                         className="link"><Chat/>Chat</Button>
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/profile"

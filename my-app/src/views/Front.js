@@ -6,7 +6,7 @@ import Upload from "./Upload";
 import Chatroom from '../Chatroom';
 import Grid from '@material-ui/core/Grid/Grid';
 import { Scrollbars } from 'react-custom-scrollbars';
-import Like from 'my-app/src/views/Likes';
+
 
 const Front = (props) => {
   const {picArray} = props;

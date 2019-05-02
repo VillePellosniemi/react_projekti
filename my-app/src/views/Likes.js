@@ -20,7 +20,7 @@ class Likes extends React.Component {
             } else {
                 this.setState((prevState, props) => {
                     return {
-                        likes: prevState.likes -1
+                        likes: prevState.likes -1,
                         updated: false
                     };
                 });

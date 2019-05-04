@@ -33,8 +33,8 @@ p {
     position: absolute;
     right: 0;
     border: 2px solid darkblue;
-    width: 500px;
-    height: 600px;
+    width: 33%;
+    height: 660px;
     background-color: rgba(0,0,0, .7);
     border-radius: 5px;
     overflow: hidden;
@@ -57,7 +57,7 @@ p {
     box-sizing: border-box;
     padding: 0 20px;
     margin: 10px 0 0;
-    height: 510px;
+    height: 570px;
     overflow-y: scroll;
 }
 

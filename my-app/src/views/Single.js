@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {getSingleMedia} from '../utils/MediaAPI';
+import './css/Single.css';
 
 class Single extends Component {
   mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
@@ -18,7 +19,7 @@ class Single extends Component {
 
   render() {
     return (
-        <img src={this.mediaUrl + this.state.file.filename} alt={this.state.file.title}/>
+        <img id="image" src={this.mediaUrl + this.state.file.filename} alt={this.state.file.title}/>
     );
   }
 

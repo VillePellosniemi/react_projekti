@@ -44,14 +44,12 @@ class MyFiles extends Component {
     return (
         <React.Fragment>
           <Grid item sm={8}>
-            <h1>My Files</h1>
             <ImageGrid picArray={this.state.picArray} edit={true}
                        deleteFile={this.deleteFile}/>
           </Grid>
           <Grid item sm={4}>
             <Chatroom />
           </Grid>
-          {/* <Table picArray={this.picArray}/> */}
         </React.Fragment>
     );
   }

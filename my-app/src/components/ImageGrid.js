@@ -36,11 +36,31 @@ class ImageGrid extends React.Component {
   mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
 
   state = {
-    file: 'http://placekitten.com/200/200',
+    file: {
+      filename: '',
+      title: '',
+      description: '[d][/d][f][/f]',
+      media_type: 'image/jpg',
+      user_id: 1,
+    }
   };
 
+  componentDidMount() {
+    const {id} = this.props;
+    getSingleMedia(id).then(pic => {
+      console.log('pic', pic);
+      console.log('filters', getFilters(pic.description, this.state.filters));
+      this.setState({
+        file: pic,
+        filters: getFilters(pic.description, this.state.filters),
+      }, () => {
+        console.log('state', this.state);
+      });
+    });
+  }
 
   render () {
+    const {filename} = this.state.file;
     return (
         <div id="kuvat">
           <GridList cols={4}>
@@ -73,8 +93,8 @@ class ImageGrid extends React.Component {
                         </IconButton>*/}
 
                           <ModalImage
-                              large={this.mediaUrl + this.state.file.filename + this.state.file.title}
-                              alt={"tet"}
+                              large={this.mediaUrl + filename}
+                              alt={"test"}
                           />
                           {this.props.edit &&
                           <React.Fragment>

@@ -113,11 +113,11 @@ class Upload extends Component {
   render() {
     return (
         <React.Fragment>
-          <h1>Upload</h1>
+          <h1 id="up">Upload</h1>
           <ValidatorForm instantValidate={false}
                          onSubmit={this.handleFileSubmit}
                          onError={errors => console.log(errors)}>
-            <TextValidator name="title" label="Title"
+            <TextValidator name="title" label="Title" id="title"
                            value={this.state.file.title}
                            onChange={this.handleInputChange}
                            validators={['required', 'minStringLength:3']}
@@ -125,7 +125,7 @@ class Upload extends Component {
                              'this field is required',
                              'minimum 3 charaters']}
                            fullWidth/>
-            <TextValidator name="description" label="Description"
+            <TextValidator name="description" label="Description" id="description"
                            value={this.state.file.description}
                            onChange={this.handleInputChange}
                            validators={['required', 'minStringLength:3']}
@@ -135,7 +135,7 @@ class Upload extends Component {
                            fullWidth
                            multiline
                            rows={3}/>
-            <TextField name="filedata" label="File"
+          <TextField name="filedata" label="File" id="file"
                        value={this.state.file.filename}
                        type="file"
                        onChange={this.handleFileChange}

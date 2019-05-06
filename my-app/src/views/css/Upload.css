@@ -1,3 +1,18 @@
 .preview {
     width: 400px
 }
+
+#up {
+    color: blue;
+}
+
+#title {
+    color: blue;
+}
+#description {
+    color: blue;
+}
+
+#file {
+    color: blue;
+}

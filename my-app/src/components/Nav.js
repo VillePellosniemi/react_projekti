@@ -102,7 +102,7 @@ class ButtonAppBar extends React.Component {
 
     return (
         <div className={classes.root}>
-          <AppBar position="static">
+          <AppBar id="appbar" position="static">
             <Toolbar>
               <IconButton id="menu" onClick={this.toggleDrawer('left', true)} color="inherit" aria-label="Menu">
                 <Menu />
@@ -120,7 +120,7 @@ class ButtonAppBar extends React.Component {
                   {sideList}
                 </div>
               </Drawer>
-              <h1 id="header">Masennus</h1>
+              <h1 id="header">Masentaa!</h1>
               <Typography variant="h6" color="inherit"
                           className={classes.grow}/>
               <Button color="inherit" button component={Link} to="/home"
@@ -133,7 +133,7 @@ class ButtonAppBar extends React.Component {
               {this.props.checkLogin() &&
               <React.Fragment>
                 <Button style={{margin: 10}} color="inherit" button
-                        component={Link} to="/video"
+                        component={Link} to="/chat"
                         className="link"><Chat/>Chat</Button>
                 <Button style={{margin: 10}} color="inherit" button
                         component={Link} to="/profile"

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import ReactPlayer from 'react-player';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {getAllMedia, getFilesByTag} from './utils/MediaAPI';
 import Front from './views/Front';
@@ -11,6 +10,7 @@ import Logout from './views/Logout';
 import Grid from '@material-ui/core/Grid';
 import Upload from './views/Upload';
 import MyFiles from './views/MyFiles';
+import Like from './views/Likes';
 import Modify from './views/Modify';
 
 class App extends Component {
@@ -60,6 +60,7 @@ class App extends Component {
     this.updateImages();
   }
 
+
   render() {
     return (
         <Router basename='/~villeope/my-app'>
@@ -67,42 +68,29 @@ class App extends Component {
             <Grid item sm={12}>
               <Nav checkLogin={this.checkLogin}/>
             </Grid>
-            <Grid item sm={8}>
               <Route path="/home" render={(props) => (
                   <Front {...props} picArray={this.state.picArray}/>
               )}/>
-
               <Route path="/upload" render={(props) => (
                   <Upload {...props} updateImages={this.updateImages}/>
               )}/>
-
               <Route path="/videos" render={(props) => (
-              <Profile {...props} user={this.state.videos}/>
+                  <Profile {...props} user={this.state.videos}/>
               )}/>
-
               <Route path="/single/:id" component={Single}/>
-
               <Route path="/modify/:id" component={Modify}/>
-
               <Route path="/profile" render={(props) => (
                   <Profile {...props} user={this.state.user}/>
               )}/>
-
               <Route path="/my-files" render={(props) => (
                   <MyFiles {...props} user={this.state.user}/>
               )}/>
-
               <Route exact path="/" render={(props) => (
                   <Login {...props} setUser={this.setUser}/>
               )}/>
-
               <Route path="/logout" render={(props) => (
                   <Logout {...props} setUserLogout={this.setUserLogout}/>
               )}/>
-            </Grid>
-            <Grid item sm={3}>
-              <h1>Chat</h1>
-            </Grid>
           </Grid>
         </Router>
     );

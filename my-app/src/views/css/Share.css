@@ -4,6 +4,9 @@
 }
 
 .socialShareContainer {
+    visibility: visible;
+    z-index: 999;
+}
     .socialShareButton {
         height: 50px;
         line-height: 25px;
@@ -26,4 +29,3 @@
         color: #666666;
         margin: 0px 10px;
     }
-}

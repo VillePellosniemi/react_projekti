@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import './css/Single.css';
 import {getSingleMedia, getFilters, getDescription} from '../utils/MediaAPI';
 import {Button} from '@material-ui/core';
+import shareContainer from './Share';
+import Likes from './Likes';
+import Grid from '@material-ui/core/Grid/Grid';
 
 class Single extends Component {
   mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
@@ -40,7 +44,8 @@ class Single extends Component {
     const {brightness, contrast, saturation, warmth} = this.state.filters;
     return (
         <React.Fragment>
-          <Button onClick={this.props.history.goBack}>Back</Button>
+          <Grid item sm={8}>
+          <Button id="backButton" onClick={this.props.history.goBack}>Back</Button>
           {console.log(media_type)}
           <h1>{title}</h1>
           {media_type.includes('image') &&
@@ -60,6 +65,14 @@ class Single extends Component {
           <p>
             {getDescription(description)}
           </p>
+          </Grid>
+          <Grid item sm={3}>
+            <h1>Jakoon</h1>
+            <div id="likes">
+            {Likes}
+            </div>
+            {shareContainer}
+          </Grid>
         </React.Fragment>
     );
   }

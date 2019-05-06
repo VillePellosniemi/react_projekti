@@ -1,3 +1,13 @@
 #image {
 
 }
+#backButton {
+    background-color: #12355b;
+    color: #FFFFFF;
+    border: #FFFFFF solid 2px;
+    border-radius: 0 15px 0 15px ;
+}
+
+#likes {
+    color: #FFFFFF;
+}

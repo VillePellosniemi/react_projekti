@@ -23,16 +23,15 @@ class Share extends Component {
             });
         }
     }
-    }
     render() {
     const  url = window.location.href;
     const facebookUrl = 'https://wwww.facebook.com/sharer/sharer.php?u=${url}';
     const twitterUrl = 'https://wwww.twitter.com/home?status=${url}';
     const linkedinUrl = 'https://wwww.linkedin.com/shareArticle?mini=true&url=${url}';
 
-}
+
         return (
-            <div className="ShareContainer">
+            <div className="shareContainer">
                 <div>
                     <button className="ShareButton" onClick={this.shareOpenToggle}>{this.state}>{this.state.toggleButtonText}</button>
                 </div>

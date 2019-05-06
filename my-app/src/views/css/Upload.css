@@ -18,12 +18,8 @@
 }
 
 #upload {
-    background-color: whitesmoke;
-    width: 50%;
-}
-
-#preview2 {
-    width: 50%;
+    background-color: green;
+    width: 1025px;
 }
 
 #uploaddiv {

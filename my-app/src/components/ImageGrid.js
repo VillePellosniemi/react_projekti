@@ -9,15 +9,14 @@ import {
 } from '@material-ui/core';
 import {
   OpenWith,
-  Settings,
-  Delete,
-  /*Photo,
+  Photo,
   VideoLabel,
-  Audiotrack,*/
+  Audiotrack,
+  Settings, Delete,
 } from '@material-ui/icons';
-import {getFilters, getSingleMedia} from '../utils/MediaAPI';
-import './css/ImageGrid.css';
-import ModalImage from 'react-modal-image'
+import {getFilters} from '../utils/MediaAPI';
+
+const mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
 
 const getFiltersToGrid = (tile) => {
   const filters = {
@@ -32,55 +31,27 @@ const getFiltersToGrid = (tile) => {
   return f;
 };
 
-class ImageGrid extends React.Component {
-  mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
-
-  state = {
-    file: {
-      filename: '',
-      title: '',
-      description: '[d][/d][f][/f]',
-      media_type: 'image/jpg',
-      user_id: 1,
-    }
-  };
-
-  componentDidMount() {
-    const {id} = this.props;
-    getSingleMedia(id).then(pic => {
-      console.log('pic', pic);
-      console.log('filters', getFilters(pic.description, this.state.filters));
-      this.setState({
-        file: pic,
-        filters: getFilters(pic.description, this.state.filters),
-      }, () => {
-        console.log('state', this.state);
-      });
-    });
-  }
-
-  render () {
-    const {filename} = this.state.file;
-    return (
-        <div id="kuvat">
-          <GridList cols={4}>
-            {this.props.picArray.map(tile => (
-                <GridListTile key={tile.file_id}>
-                  {tile.media_type === 'image' &&
-                  <img src={this.mediaUrl + tile.thumbnails.w160} alt={tile.title}
-                       style={getFiltersToGrid(tile)}/>
-                  }
-                  {tile.media_type === 'video' &&
-                  <img src={this.mediaUrl + tile.screenshot} alt={tile.title}/>
-                  }
-                  {tile.media_type === 'audio' &&
-                  <img src="http://placekitten.com/400/400" alt={tile.title}/>
-                  }
-                  <GridListTileBar
-                      title={tile.title}
-                      actionIcon={
-                        <React.Fragment>
-                          {/*<IconButton>
+const ImageGrid = (props) => {
+  return (
+      <div id="kuvat">
+        <GridList cols={4}>
+          {props.picArray.map(tile => (
+              <GridListTile key={tile.file_id}>
+                {tile.media_type === 'image' &&
+                <img src={mediaUrl + tile.thumbnails.w160} alt={tile.title}
+                     style={getFiltersToGrid(tile)}/>
+                }
+                {tile.media_type === 'video' &&
+                <img src={mediaUrl + tile.screenshot} alt={tile.title}/>
+                }
+                {tile.media_type === 'audio' &&
+                <img src="http://placekitten.com/400/400" alt={tile.title}/>
+                }
+                <GridListTileBar
+                    title={tile.title}
+                    actionIcon={
+                      <React.Fragment>
+                        <IconButton>
                           {tile.media_type === 'image' &&
                           <Photo style={{color: 'whitesmoke'}}/>
                           }
@@ -90,37 +61,34 @@ class ImageGrid extends React.Component {
                           {tile.media_type === 'audio' &&
                           <Audiotrack style={{color: 'whitesmoke'}}/>
                           }
-                        </IconButton>*/}
-
-                          <ModalImage
-                              large={this.mediaUrl + filename}
-                              alt={"test"}
-                          />
-                          {this.props.edit &&
-                          <React.Fragment>
-                            <IconButton component={Link}
-                                        to={'modify/' + tile.file_id}>
-                              <Settings style={{color: 'whitesmoke'}}/>
-                            </IconButton>
-                            <IconButton onClick={() => {
-                              this.props.deleteFile(tile.file_id);
-                            }}>
-                              <Delete style={{color: 'whitesmoke'}}/>
-                            </IconButton>
-                          </React.Fragment>}
-                        </React.Fragment>
-                      }
-                  />
-                </GridListTile>
-            ))}
-          </GridList>
-        </div>
-    );
-  }
-}
+                        </IconButton>
+                        <IconButton component={Link}
+                                    to={'single/' + tile.file_id}>
+                          <OpenWith color="secondary"/>
+                        </IconButton>
+                        {props.edit &&
+                        <React.Fragment>
+                          <IconButton component={Link}
+                                      to={'modify/' + tile.file_id}>
+                            <Settings style={{color: 'whitesmoke'}}/>
+                          </IconButton>
+                          <IconButton onClick={() => {
+                            props.deleteFile(tile.file_id);
+                          }}>
+                            <Delete style={{color: 'whitesmoke'}}/>
+                          </IconButton>
+                        </React.Fragment>}
+                      </React.Fragment>
+                    }
+                />
+              </GridListTile>
+          ))}
+        </GridList>
+      </div>
+  );
+};
 
 ImageGrid.propTypes = {
-  match: PropTypes.object,
   picArray: PropTypes.array,
   edit: PropTypes.bool,
   deleteFile: PropTypes.func,

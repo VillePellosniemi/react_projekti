@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Typography} from '@material-ui/core';
 import {Slider} from '@material-ui/lab';
 import PropTypes from 'prop-types';
+import './css/imageEditor.css';
 
 class ImageEditor extends Component {
 

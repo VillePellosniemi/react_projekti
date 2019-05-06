@@ -62,7 +62,7 @@ class ButtonAppBar extends React.Component {
             </ListItem>
             {this.props.checkLogin() &&
             <React.Fragment>
-              <ListItem style={{padding:20}} button component={Link} to="/videos">
+              <ListItem style={{padding:20}} button component={Link} to="/chat">
                 <ListItemIcon>
                   <VideoLibrary/>
                 </ListItemIcon>

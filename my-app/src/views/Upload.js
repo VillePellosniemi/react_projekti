@@ -86,7 +86,7 @@ class Upload extends Component {
         this.setState({loading: false});
       }, 2000);
 
-    })
+    });
   };
 
   updateFilters = (newFilters) => {
@@ -97,42 +97,53 @@ class Upload extends Component {
 
   render() {
     return (
-        <React.Fragment>
-          <h1 id="up">Upload</h1>
-          <ValidatorForm instantValidate={false}
-                         onSubmit={this.handleFileSubmit}
-                         onError={errors => console.log(errors)}>
-            <TextValidator name="title" label="Title" id="title"
-                           value={this.state.file.title}
-                           onChange={this.handleInputChange}
-                           validators={['required', 'minStringLength:3']}
-                           errorMessages={[
-                             'this field is required',
-                             'minimum 3 charaters']}
+        <div id="upload">
+          <React.Fragment>
+            <form id="uploaddiv">
+              <h1 id="up">Upload a File</h1>
+              <ValidatorForm instantValidate={false}
+                             onSubmit={this.handleFileSubmit}
+                             onError={errors => console.log(errors)}>
+                <TextValidator style={{paddingTop: 10, paddingBottom: 5}} name="title" label="Title" id="title"
+                               value={this.state.file.title}
+                               onChange={this.handleInputChange}
+                               validators={['required', 'minStringLength:3']}
+                               errorMessages={[
+                                 'this field is required',
+                                 'minimum 3 charaters']}
+                               fullWidth/>
+                <TextValidator style={{paddingTop: 10, paddingBottom: 5}} name="description" label="Description"
+                               id="description"
+                               value={this.state.file.description}
+                               onChange={this.handleInputChange}
+                               validators={['required', 'minStringLength:3']}
+                               errorMessages={[
+                                 'this field is required',
+                                 'minimum 3 charaters']}
+                               fullWidth
+                               multiline/>
+                <TextField style={{marginTop: -15}} name="filedata" label="File" id="file"
+                           value={this.state.file.filename}
+                           type="file"
+                           onChange={this.handleFileChange}
                            fullWidth/>
-            <TextValidator name="description" label="Description" id="description"
-                           value={this.state.file.description}
-                           onChange={this.handleInputChange}
-                           validators={['required', 'minStringLength:3']}
-                           errorMessages={[
-                             'this field is required',
-                             'minimum 3 charaters']}
-                           fullWidth
-                           multiline
-                           rows={3}/>
-          <TextField name="filedata" label="File" id="file"
-                       value={this.state.file.filename}
-                       type="file"
-                       onChange={this.handleFileChange}
-                       fullWidth/>
-            <Button type="submit" variant="contained"
-                    color="primary">Upload&nbsp;&nbsp;{this.state.loading &&
-            <CircularProgress size={20} color="secondary"/>}</Button>
-          </ValidatorForm>
-          {this.state.imageData !== null && this.state.type.includes('image') &&
-          <ImageEditor state={this.state} updateFilters={this.updateFilters} />
-          }
-        </React.Fragment>
+                <Button id="button1" type="submit" variant="contained"
+                        color="primary">Upload&nbsp;&nbsp;{this.state.loading &&
+                <CircularProgress size={20} color="secondary"/>}</Button>
+              </ValidatorForm>
+            </form>
+          </React.Fragment>
+          <React.Fragment>
+            <div id="preview2">
+              {this.state.imageData !== null &&
+              this.state.type.includes('image') &&
+              <ImageEditor state={this.state}
+                           updateFilters={this.updateFilters}/>
+              }
+            </div>
+          </React.Fragment>
+        </div>
+
     );
   }
 }

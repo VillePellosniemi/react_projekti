@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Hind:700');
+
 .preview {
     width: 400px
 }
 
 #up {
-    color: blue;
+    margin: 0;
+    font-family: 'Hind', sans-serif;
+    padding: 0;
 }
 
 #title {
@@ -13,6 +17,21 @@
     color: blue;
 }
 
-#file {
-    color: blue;
+#upload {
+    background-color: whitesmoke;
+    width: 50%;
+}
+
+#preview2 {
+    width: 50%;
+}
+
+#uploaddiv {
+    padding: 20px;
+}
+
+#button1 {
+    margin-top: 15px;
+    width: 150px;
+    font-size: 15px;
 }

@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Hind:700');
+
 .profile {
     font-size: 100px;
     color: darkblue;
-    font-family: "Baskerville Old Face";
+    font-family: 'Hind', sans-serif;
     text-align: center;
 }
 

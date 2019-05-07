@@ -8,7 +8,7 @@ import {Scrollbars} from 'react-custom-scrollbars';
 import './css/Images.css';
 import '../App.css';
 import Input from './Input';
-import Messages from './Messages';
+import ChatPotApp from './ChatPotApp';
 
 const Front = (props) => {
   const {picArray, messages} = props;
@@ -21,7 +21,7 @@ const Front = (props) => {
           </Scrollbars>
         </Grid>
         <Grid item sm={4}>
-          <Messages messages={messages} />
+          <ChatPotApp />
         </Grid>
         <div>
           <Upload/>

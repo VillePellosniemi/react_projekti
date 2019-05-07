@@ -3,14 +3,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ImageGrid from '../components/ImageGrid';
 import Upload from './Upload';
-import Chatroom from '../Chatroom';
 import Grid from '@material-ui/core/Grid/Grid';
 import {Scrollbars} from 'react-custom-scrollbars';
 import './css/Images.css';
-
+import '../App.css';
+import Input from './Input';
+import Messages from './Messages';
 
 const Front = (props) => {
-  const {picArray} = props;
+  const {picArray, messages} = props;
   return (
       <React.Fragment>
         {/* <Table picArray={picArray}/> */}
@@ -20,7 +21,7 @@ const Front = (props) => {
           </Scrollbars>
         </Grid>
         <Grid item sm={4}>
-          <Chatroom/>
+          <Messages messages={messages} />
         </Grid>
         <div>
           <Upload/>

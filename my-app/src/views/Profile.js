@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid/Grid';
-import Chatroom from '../Chatroom';
+import Messages from "./Messages";
 
 const mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
 
@@ -55,7 +55,7 @@ const Profile = (props) => {
           </Card>
         </Grid>
         <Grid item sm={4}>
-          <Chatroom />
+          <Messages />
         </Grid>
       </React.Fragment>
   );

@@ -45,31 +45,33 @@ class Single extends Component {
     return (
         <React.Fragment>
           <Grid item sm={8}>
-          <Button id="backButton" onClick={this.props.history.goBack}>Back</Button>
-          {console.log(media_type)}
-          <h1>{title}</h1>
-          {media_type.includes('image') &&
-          <img src={this.mediaUrl + filename}
-               alt={title}
-               style={{filter: `brightness(${brightness}%) contrast(${contrast}%) sepia(${warmth}%) saturate(${saturation}%)`}}
-          />
-          }
-          {media_type.includes('video') &&
-          <video src={this.mediaUrl + filename}
-                 controls
-          />}
-          {media_type.includes('audio') &&
-          <audio src={this.mediaUrl + filename}
-                 controls
-          />}
-          <p>
-            {getDescription(description)}
-          </p>
+            <Button id="backButton"
+                    onClick={this.props.history.goBack}>Back to Home</Button>
+            <div className="kuvacontainer">
+              {console.log(media_type)}
+              <h1 id="test">Title: {title}</h1>
+              <p id="test">Description: {getDescription(description)}
+              </p>
+              {media_type.includes('image') &&
+              <img id="image" src={this.mediaUrl + filename}
+                   alt={title}
+                   style={{filter: `brightness(${brightness}%) contrast(${contrast}%) sepia(${warmth}%) saturate(${saturation}%)`}}
+              />
+              }
+              {media_type.includes('video') &&
+              <video id="video" src={this.mediaUrl + filename}
+                     controls
+              />}
+              {media_type.includes('audio') &&
+              <audio id="audio" src={this.mediaUrl + filename}
+                     controls
+              />}
+            </div>
           </Grid>
           <Grid item sm={3}>
-            <h1>Jakoon</h1>
+            <h1 id="test">Jakoon</h1>
             <div id="likes">
-            {Likes}
+              {Likes}
             </div>
             {shareContainer}
           </Grid>

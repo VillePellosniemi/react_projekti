@@ -104,7 +104,7 @@ class Upload extends Component {
               <ValidatorForm instantValidate={false}
                              onSubmit={this.handleFileSubmit}
                              onError={errors => console.log(errors)}>
-                <TextValidator style={{paddingTop: 10, paddingBottom: 5}} name="title" label="Title" id="title"
+                <TextValidator style={{marginTop: -5}} name="title" label="Title" id="title"
                                value={this.state.file.title}
                                onChange={this.handleInputChange}
                                validators={['required', 'minStringLength:3']}
@@ -112,7 +112,7 @@ class Upload extends Component {
                                  'this field is required',
                                  'minimum 3 charaters']}
                                fullWidth/>
-                <TextValidator style={{paddingTop: 10, paddingBottom: 5}} name="description" label="Description"
+                <TextValidator style={{marginTop: 5, marginBottom: 5}} name="description" label="Description"
                                id="description"
                                value={this.state.file.description}
                                onChange={this.handleInputChange}
@@ -122,11 +122,10 @@ class Upload extends Component {
                                  'minimum 3 charaters']}
                                fullWidth
                                multiline/>
-                <TextField style={{marginTop: -15}} name="filedata" label="File" id="file"
+                <input name="filedata" id="file"
                            value={this.state.file.filename}
                            type="file"
-                           onChange={this.handleFileChange}
-                           fullWidth/>
+                           onChange={this.handleFileChange}/><br/>
                 <Button id="button1" type="submit" variant="contained"
                         color="primary">Upload&nbsp;&nbsp;{this.state.loading &&
                 <CircularProgress size={20} color="secondary"/>}</Button>

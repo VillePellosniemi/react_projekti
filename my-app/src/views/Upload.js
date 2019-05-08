@@ -97,8 +97,8 @@ class Upload extends Component {
     return (
         <div id="upload">
           <React.Fragment>
+            <h1 id="up">Upload a File</h1>
             <form id="uploaddiv">
-              <h1 id="up">Upload a File</h1>
               <ValidatorForm instantValidate={false}
                              onSubmit={this.handleFileSubmit}
                              onError={errors => console.log(errors)}>

@@ -12,9 +12,10 @@ label + .MuiInput-formControl-261 {
 }
 
 #up {
-    margin: 0;
     font-family: 'Hind', sans-serif;
-    padding: 0;
+    padding: 10px;
+    display: block;
+    width: 100%;
 }
 
 #file {
@@ -35,7 +36,7 @@ label + .MuiInput-formControl-261 {
     overflow: hidden;
 }
 
-#uploaddiv {
+#uploaddiv form {
     padding: 20px;
     display: block;
 }

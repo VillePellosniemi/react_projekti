@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ImageGrid from '../components/ImageGrid';
 import {deleteMedia, getMediaFromUser} from '../utils/MediaAPI';
 import Grid from '@material-ui/core/Grid/Grid';
-import Chatroom from '../Chatroom';
+import Messages from './Messages';
 
 class MyFiles extends Component {
   state = {
@@ -43,12 +43,9 @@ class MyFiles extends Component {
   render() {
     return (
         <React.Fragment>
-          <Grid item sm={8}>
+          <Grid item sm={12}>
             <ImageGrid picArray={this.state.picArray} edit={true}
                        deleteFile={this.deleteFile}/>
-          </Grid>
-          <Grid item sm={4}>
-            <Chatroom />
           </Grid>
         </React.Fragment>
     );

@@ -3,11 +3,22 @@
 .preview {
     width: 400px
 }
+label + .MuiInput-formControl-261 {
+    margin-top: -10px;
+}
+
+.MuiFormControl-fullWidth-241 {
+    margin: 0;
+}
 
 #up {
     margin: 0;
     font-family: 'Hind', sans-serif;
     padding: 0;
+}
+
+#file {
+    padding-top: 10px;
 }
 
 #title {
@@ -18,16 +29,15 @@
 }
 
 #upload {
-    background-color: whitesmoke;
-    width: 50%;
-}
-
-#preview2 {
-    width: 50%;
+    background-color: #bfcde7;
+    width: 79%;
+    height: 300px;
+    overflow: hidden;
 }
 
 #uploaddiv {
     padding: 20px;
+    display: block;
 }
 
 #button1 {

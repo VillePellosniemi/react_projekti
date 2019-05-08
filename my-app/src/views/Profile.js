@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import {Redirect} from 'react-router-dom';
 import './css/Profile.css';
 import {
@@ -10,60 +9,43 @@ import {
   CardMedia,
   Typography,
 } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid/Grid';
-import Chatroom from '../Chatroom';
 
-const mediaUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
-
-const styles = {
-  card: {
-    maxWidth: 500,
-  },
-  media: {
-    height: 300,
-    objectFit: 'cover'
-  },
-};
 
 const Profile = (props) => {
   if (props.user === null) {
-    return <Redirect to="/" />;
+    return <Redirect to="/"/>;
   }
 
   const {username, email, full_name} = props.user;
-  const { classes } = props;
   return (
-      <React.Fragment id={'container'}>
-        <Grid item sm={8}>
-          <h1 className={'profile'}> Profile</h1>
-          <Card id="card" className={classes.card}>
+      <div id="profilecontainer">
+        <React.Fragment>
+          <Card id="card">
+            <h1 className="profile"> Profile</h1>
             <CardActionArea>
-              <CardMedia className={classes.media}
-                         image={mediaUrl} title={username}/>
+              <CardMedia className="media"
+                         image={'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png'}
+                         title={username}/>
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography id="profileuser" gutterBottom variant="h5" component="h2">
                   {username}
                 </Typography>
-                <Typography component="p">
+                <Typography id="profilecontent" component="p">
                   Email: {email}
                 </Typography>
-                <Typography component="p">
+                <Typography id="profilecontent" component="p">
                   Full name: {full_name}
                 </Typography>
               </CardContent>
             </CardActionArea>
           </Card>
-        </Grid>
-        <Grid item sm={4}>
-          <Chatroom />
-        </Grid>
-      </React.Fragment>
+        </React.Fragment>
+      </div>
   );
 };
 
 Profile.propTypes = {
   user: PropTypes.object,
-  classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Profile);
+export default Profile;

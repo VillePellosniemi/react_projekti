@@ -7,7 +7,6 @@ import Grid from '@material-ui/core/Grid/Grid';
 import {Scrollbars} from 'react-custom-scrollbars';
 import './css/Images.css';
 import '../App.css';
-import Input from './Input';
 import ChatPotApp from './ChatPotApp';
 
 const Front = (props) => {

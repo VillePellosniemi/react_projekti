@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import './css/ChatPot.css';
 import Messages from "./Messages";
 import Input from "./Input";
 
@@ -69,6 +70,10 @@ class App extends Component {
         return (
             <div className="ChatApp">
                 <div className="ChatAppHeader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                     <h1>Chatpot</h1>
                 </div>
                 <Messages

@@ -2,14 +2,12 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import {Button, CircularProgress} from '@material-ui/core';
-import TextField from '@material-ui/core/es/TextField/TextField';
 import './css/Upload.css';
 import ImageEditor from '../components/ImageEditor';
 import {upload} from '../utils/MediaAPI';
 
 class Upload extends Component {
   mediaUrl = 'http://media.mw.metropolia.fi/wbma/';
-
   fr = new FileReader();
 
   componentDidMount() {
@@ -86,7 +84,7 @@ class Upload extends Component {
         this.setState({loading: false});
       }, 2000);
 
-    });
+    })
   };
 
   updateFilters = (newFilters) => {

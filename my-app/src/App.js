@@ -13,6 +13,8 @@ import MyFiles from './views/MyFiles';
 import Modify from './views/Modify';
 import Input from './views/Input';
 import './App.css';
+import ChatPotApp from './views/ChatPotApp';
+import Chat from './views/Chat';
 
 
 //chat-pot random generaattori
@@ -148,6 +150,7 @@ class App extends Component {
                   <Profile {...props} user={this.state.videos}/>
               )}/>
               <Route path="/single/:id" component={Single}/>
+              <Route path="/chat" component={Chat}/>
               <Route path="/modify/:id" component={Modify}/>
               <Route path="/profile" render={(props) => (
                   <Profile {...props} user={this.state.user}/>

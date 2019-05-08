@@ -21,7 +21,7 @@ const Profile = (props) => {
       <div id="profilecontainer">
         <React.Fragment>
           <Card id="card">
-            <h1 className="profile"> Profile</h1>
+            <h1 className="profile">Your Profile</h1>
             <CardActionArea>
               <CardMedia className="media"
                          image={'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png'}

@@ -4,6 +4,7 @@ import ImageGrid from '../components/ImageGrid';
 import {deleteMedia, getMediaFromUser} from '../utils/MediaAPI';
 import Grid from '@material-ui/core/Grid/Grid';
 import Messages from './Messages';
+import {Scrollbars} from 'react-custom-scrollbars';
 
 class MyFiles extends Component {
   state = {
@@ -43,9 +44,12 @@ class MyFiles extends Component {
   render() {
     return (
         <React.Fragment>
-          <Grid item sm={12}>
-            <ImageGrid picArray={this.state.picArray} edit={true}
+          <Grid item sm={8}>
+            <h1 style={{color: 'white'}}>Your Uploaded Files</h1>
+            <Scrollbars class="scroll" style={{width: '100%', height: 365, backgroundColor: "#12355b"}}>
+              <ImageGrid picArray={this.state.picArray} edit={true}
                        deleteFile={this.deleteFile}/>
+            </Scrollbars>
           </Grid>
         </React.Fragment>
     );

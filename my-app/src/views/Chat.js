@@ -1,22 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid/Grid';
-import './css/Images.css';
-import '../App.css';
+import './css/Chat.css';
 import ChatPotApp from './ChatPotApp';
 
-const Chat = (props) => {
+const section = {
+  height: "665px",
+};
+
+const Chat = () => {
   return (
-      <React.Fragment>
-        <Grid item sm={12}>
-          <ChatPotApp/>
+      <React.Fragment id="chat-kokosivu">
+        <Grid item xs={4} md={12}>
+          <div style={section}><ChatPotApp/></div>
         </Grid>
       </React.Fragment>
   );
 };
 
-Chat.propTypes = {
-  picArray: PropTypes.array,
-};
 
 export default Chat;

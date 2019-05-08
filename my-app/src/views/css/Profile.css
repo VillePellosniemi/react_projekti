@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:700');
 
 .profile {
-    font-size: 70px;
+    font-size: 50px;
     color: #12355b;
     font-family: 'Hind', sans-serif;
     text-align: center;
+    padding: 10px;
 }
 
 #card {
@@ -17,8 +18,8 @@
 }
 
 .media {
-    height: 320px;
-    width: 320px;
+    height: 300px;
+    width: 300px;
     margin-bottom: 30px;
 }
 

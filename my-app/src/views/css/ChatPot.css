@@ -36,10 +36,10 @@
     pointer-events: none;
 }
 
-.ChatApp:hover:before{
+/*.ChatApp:hover:before{
     left:-50%;
     transform: skewX(-5deg);
-}
+}*/
 
 
 .ChatApp .content{
@@ -63,7 +63,6 @@
     height: 100%;
     display: block;
     box-sizing: inherit;
-
 }
 
 .ChatApp span:nth-child(1)
@@ -73,24 +72,15 @@
 
 .ChatApp span:nth-child(2)
 {
-    transform:rotate(90deg);
-}
-
-.ChatApp span:nth-child(3)
-{
     transform:rotate(180deg);
 }
 
-.ChatApp span:nth-child(4)
-{
-    transform:rotate(270deg);
-}
 
 .ChatApp span:before
 {
     content: '';
     position: absolute;
-    width:100%;
+    width: 100vw;
     height: 2px;
     background: #50dfdb;
     animation: animate 4s linear infinite;
@@ -195,7 +185,7 @@ form {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    width: 75%;
+    width: 90%;
     padding: 5px;
     font-size: 16px;
     border-radius: 8px;
@@ -204,13 +194,12 @@ form {
 
 #ChatButton {
     position: fixed;
-    bottom: 20px;
+    bottom: 21px;
     right: 20px;
-    padding: 5px 10px;
+    padding: 5px 25px;
     font-size: 16px;
     background-color: #2a3cad;
     color: white;
     border: none;
     border-radius: 8px;
-    margin-left: 10px;
 }

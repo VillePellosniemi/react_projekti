@@ -21,10 +21,10 @@ const Front = (props) => {
         </Grid>
         <Grid item sm={4}>
           <ChatPotApp />
-        </Grid>
         <div>
           <Upload/>
         </div>
+        </Grid>
       </React.Fragment>
   );
 };

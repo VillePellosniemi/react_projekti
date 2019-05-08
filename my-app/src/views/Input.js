@@ -20,14 +20,14 @@ class Input extends Component {
         return (
             <div className="Input">
                 <form onSubmit={e => this.onSubmit(e)}>
-                    <input
+                    <input id="ChatInput"
                         onChange={e => this.onChange(e)}
                         value={this.state.text}
                         type="text"
                         placeholder="Enter your message and press ENTER"
                         autofocus="true"
                     />
-                    <button>Send</button>
+                    <button id="ChatButton">Send</button>
                 </form>
             </div>
         );

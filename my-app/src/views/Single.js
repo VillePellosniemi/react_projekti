@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './css/Single.css';
 import {getSingleMedia, getFilters, getDescription} from '../utils/MediaAPI';
 import {Button} from '@material-ui/core';
-import shareContainer from './Share';
+import ShareButton from './ShareButton';
 import Likes from './Likes';
 import Grid from '@material-ui/core/Grid/Grid';
 
@@ -69,11 +69,9 @@ class Single extends Component {
             </div>
           </Grid>
           <Grid item sm={3}>
-            <h1 id="test">Jakoon</h1>
-            <div id="likes">
-              {Likes}
-            </div>
-            {shareContainer}
+            <div id="share">
+                  <ShareButton />
+              </div>
           </Grid>
         </React.Fragment>
     );

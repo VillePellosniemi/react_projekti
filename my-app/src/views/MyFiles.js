@@ -43,12 +43,9 @@ class MyFiles extends Component {
   render() {
     return (
         <React.Fragment>
-          <Grid item sm={8}>
+          <Grid item sm={12}>
             <ImageGrid picArray={this.state.picArray} edit={true}
                        deleteFile={this.deleteFile}/>
-          </Grid>
-          <Grid item sm={4}>
-            <Messages/>
           </Grid>
         </React.Fragment>
     );

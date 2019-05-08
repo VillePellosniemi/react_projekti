@@ -71,6 +71,7 @@ class Single extends Component {
           <Grid item sm={3}>
             <div id="share">
                   <ShareButton />
+                  <Likes />
               </div>
           </Grid>
         </React.Fragment>

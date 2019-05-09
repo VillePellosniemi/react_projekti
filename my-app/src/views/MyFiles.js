@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import ImageGrid from '../components/ImageGrid';
 import {deleteMedia, getMediaFromUser} from '../utils/MediaAPI';
 import Grid from '@material-ui/core/Grid/Grid';
-import Messages from './Messages';
 import {Scrollbars} from 'react-custom-scrollbars';
+import './css/MyFiles.css';
 
 class MyFiles extends Component {
   state = {
@@ -20,7 +20,7 @@ class MyFiles extends Component {
 
   deleteFile = (id) => {
     console.log('delete', id);
-    const cnfrm = window.confirm('Really? Delete?');
+    const cnfrm = window.confirm('Delete File?');
     if (!cnfrm) {
       return;
     }
@@ -43,15 +43,15 @@ class MyFiles extends Component {
 
   render() {
     return (
-        <React.Fragment>
-          <Grid item sm={8}>
-            <h1 style={{color: 'white'}}>Your Uploaded Files</h1>
-            <Scrollbars class="scroll" style={{width: '100%', height: 365, backgroundColor: "#12355b"}}>
+        <div id="myfiles-div">
+          <div id="myfiles-content">
+            <h1 id="myfiles-header">Your Uploaded Files</h1>
+            <Scrollbars class="scroll" style={{height: 500, width: '100%'}}>
               <ImageGrid picArray={this.state.picArray} edit={true}
                        deleteFile={this.deleteFile}/>
             </Scrollbars>
-          </Grid>
-        </React.Fragment>
+          </div>
+        </div>
     );
   }
 }

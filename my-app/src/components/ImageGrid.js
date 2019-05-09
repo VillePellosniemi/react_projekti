@@ -51,31 +51,20 @@ const ImageGrid = (props) => {
                     title={tile.title}
                     actionIcon={
                       <React.Fragment>
-                        <IconButton>
-                          {tile.media_type === 'image' &&
-                          <Photo style={{color: 'whitesmoke'}}/>
-                          }
-                          {tile.media_type === 'video' &&
-                          <VideoLabel style={{color: 'whitesmoke'}}/>
-                          }
-                          {tile.media_type === 'audio' &&
-                          <Audiotrack style={{color: 'whitesmoke'}}/>
-                          }
-                        </IconButton>
                         <IconButton component={Link}
                                     to={'single/' + tile.file_id}>
-                          <OpenWith color="secondary"/>
+                          <OpenWith style={{color: 'white'}} />
                         </IconButton>
                         {props.edit &&
                         <React.Fragment>
                           <IconButton component={Link}
                                       to={'modify/' + tile.file_id}>
-                            <Settings style={{color: 'whitesmoke'}}/>
+                            <Settings style={{color: 'white'}}/>
                           </IconButton>
                           <IconButton onClick={() => {
                             props.deleteFile(tile.file_id);
                           }}>
-                            <Delete style={{color: 'whitesmoke'}}/>
+                            <Delete style={{color: 'white'}}/>
                           </IconButton>
                         </React.Fragment>}
                       </React.Fragment>

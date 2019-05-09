@@ -1,0 +1,27 @@
+#myfiles-div {
+    text-align: center;
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 12%;
+}
+
+#myfiles-header {
+    font-size: 40px;
+    color: #12355b;
+    padding: 20px;
+}
+
+#myfiles-content {
+    display: inline-block;
+    margin: 20px;
+    background-color: #f9f9f9;
+    padding: 0 50px 20px 50px;
+    width: 800px;
+    border-radius: 15px;
+}
+
+

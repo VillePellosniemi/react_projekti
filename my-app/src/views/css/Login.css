@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Hind:700');
+
+html {
+    background: url("https://cdn.hipwallpaper.com/i/95/89/lO0ACq.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    text-align: center;
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20%;
+}
+
+.header {
+    font-family: 'Hind', sans-serif;
+    font-size: 50px;
+    margin: 10px 0 10px 0;
+    padding: 0;
+}
+
+#button {
+    margin-top: 30px;
+    background-color: #12355b;
+    height: 80px;
+    font-size: 20px;
+    border-radius: 0;
+    width: 250px;
+    color: whitesmoke;
+}
+
+#button2 {
+    background-color: #bfcde7;
+    margin-top: 30px;
+    height: 80px;
+    font-size: 15px;
+    border-radius: 0;
+    color: black;
+    width: 250px;
+}
+
+#login {
+    display: inline-block;
+    margin: 50px;
+    background-color: #f9f9f9;
+    padding: 40px;
+    max-width: 500px;
+    border-radius: 15px;
+}
+
+
+#register {
+    max-width: 500px;
+    display: inline-block;
+    padding: 20px 50px 50px 50px;
+    background-color: white;
+    margin-top: -20px;
+    border-radius: 15px;
+}
+
+#username, #password, #repeatPassword, #email, #full_name {
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+}
+
+

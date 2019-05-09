@@ -1,0 +1,6 @@
+#kuvat {
+    justify-content: space-around;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
